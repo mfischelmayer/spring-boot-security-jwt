@@ -1,0 +1,22 @@
+###
+# authentication with the admin user
+###
+POST http://localhost:8080/auth
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "test"
+}
+
+###
+# authenticate with a "normal" user
+###
+POST http://localhost:8080/auth
+Content-Type: application/json
+
+{
+  "username": "user2",
+  "password": "test"
+}
+

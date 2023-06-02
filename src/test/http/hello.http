@@ -1,0 +1,6 @@
+###
+# This Endpoint is open for everyone. Also for not authenticated users
+###
+
+GET http://localhost:8080/hello
+
