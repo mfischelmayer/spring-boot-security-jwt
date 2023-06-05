@@ -29,7 +29,7 @@ public class SecurityConfigurer {
 
     @Bean
     public SecurityFilterChain securityFilterChain( HttpSecurity http ) throws Exception {
-        return http.csrf().disable()
+        return http.csrf( crsf -> crsf.disable() )
                 .authorizeHttpRequests( auth -> auth
                         .requestMatchers( "/auth" ).permitAll()
                         .requestMatchers( "/hello" ).permitAll()
@@ -42,6 +42,8 @@ public class SecurityConfigurer {
 
     @Bean
     public AuthenticationManager authenticationManager( AuthenticationConfiguration authenticationConfiguration ) throws Exception {
+        // form-based login, LDAP authentication, OAuth, etc., everything is possible
+        // the default is a DaoAuthenticationProvider
         return authenticationConfiguration.getAuthenticationManager();
     }
 }
