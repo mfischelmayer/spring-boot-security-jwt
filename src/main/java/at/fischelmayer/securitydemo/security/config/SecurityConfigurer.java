@@ -44,6 +44,8 @@ public class SecurityConfigurer {
     public AuthenticationManager authenticationManager( AuthenticationConfiguration authenticationConfiguration ) throws Exception {
         // form-based login, LDAP authentication, OAuth, etc., everything is possible
         // the default is a DaoAuthenticationProvider
+        // the DaoAuthenticationProvider need a implementation of UserDetailsService
+        // which is responsible for the actual implementation to load a user
         return authenticationConfiguration.getAuthenticationManager();
     }
 }

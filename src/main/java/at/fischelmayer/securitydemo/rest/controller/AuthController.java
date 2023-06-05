@@ -28,6 +28,12 @@ public class AuthController {
         this.jwtTokenUtil = jwtTokenUtil;
     }
 
+    /**
+     *
+     * @param authenticationRequest username and password
+     * @return
+     * @throws Exception
+     */
     @PostMapping( "/auth" )
     public ResponseEntity<?> createAuthenticationToken( @RequestBody AuthenticationRequest authenticationRequest ) throws Exception {
 

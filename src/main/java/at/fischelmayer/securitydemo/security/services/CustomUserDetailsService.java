@@ -19,6 +19,15 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    /**
+     * In our case the user store is a database.
+     * It's possible to implement whatever we like as an data store for an user.
+     * (e.g. a file, a directory service or whatever)
+     *
+     * @param username the username identifying the user whose data is required.
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername( String username ) throws UsernameNotFoundException {
         User user = userRepository.findByUsername( username );
