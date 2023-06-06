@@ -20,3 +20,16 @@ Content-Type: application/json
   "password": "test"
 }
 
+###
+# user not exists
+###
+POST http://localhost:8080/auth
+Content-Type: application/json
+
+{
+  "username": "user100",
+  "password": "test"
+}
+
+
+
